@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block body %}
+    <ul>
+        <li><a href='{% url "console.list" %}'>Consoles</a></li>
+        <li><a href='{% url "game.list" %}'>Games</a></li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block title %}List{% endblock %}
+
+
+{% block head %}
+    <style>
+        table.list_table {
+            width: 100%;
+        }
+        table.list_table td {
+            border-bottom: solid 1px black;
+            border-left: solid 1px black;
+            padding: 3px;
+        }
+        table.list_table td.obj_id {
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    <p>
+        <a href='{{ object_list.model.get_create_url }}'>Add item</a>
+    </p>
+    <hr />
+    {% if object_list %}
+        <table class='list_table'>
+            {% for obj in object_list %}
+                <tr>
+                    <td class='obj_id'>
+                        <a href='{{ obj.get_absolute_url }}'>{{ obj.pk }}</a>
+                    </td>
+                    <td class='obj_display'>
+                        <a href='{{ obj.get_absolute_url }}'>{{ obj }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No items found.</p>
+    {% endif %}
+{% endblock %}

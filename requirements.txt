@@ -1,0 +1,4 @@
+Django==1.4
+PIL==1.1.7
+Unipath==0.2.1
+django-db-file-storage==0.1.0
