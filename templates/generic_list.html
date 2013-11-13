@@ -36,6 +36,11 @@
                     <td class='obj_display'>
                         <a href='{{ obj.get_absolute_url }}'>{{ obj }}</a>
                     </td>
+                    <td>
+                        <a href="/files/download/?name={{ obj.picture }}">
+                            <img height=64 width=64 src="/files/get/?name={{ obj.picture }}">
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
         </table>
